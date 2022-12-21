@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter/Inter-Regular.ttf");
+}
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter/Inter-Bold.ttf");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Inika";
+  src: url("/assets/fonts/Inika/Inika-Regular.ttf");
+}
+@font-face {
+  font-family: "Inika";
+  src: url("/assets/fonts/Inika/Inika-Bold.ttf");
+  font-weight: bold;
+}
+:root {
+  box-sizing: border-box;
+  --text-color: #636060;
+  --base-color: #499A18;
+  --accent-color: #E06733;
+  --bg-color: #EDF2EC;
+  --title-color: #717171;
+  --nav-links-color: #010201;
+}
+
+.header {
+  height: 134px;
+  background-color: var(--bg-color, #EDF2EC);
+}
+
+.logo {
+  display: inline-block;
+  padding: 2em;
+  width: 98px;
+  height: 94px;
+  background-image: url("/assets/icons/logo.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  transform: translateX(-14px);
+}
+
+.container {
+  width: 1220px;
+  margin: auto;
+}
+.container__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+}
+.nav__link {
+  color: var(--nav-links-color, #010201);
+  font-family: "Inika";
+  font-size: 1em;
+  line-height: 3.125em;
+  padding: 2em 2.685em;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+.nav__link:last-child {
+  padding-right: 4px;
+}
+.nav__link:hover, .nav__link_hover {
+  color: var(--accent-color, #E06733);
+}
+.nav__link:active, .nav__link_active {
+  color: var(--accent-color, #E06733);
+  font-weight: bold;
+}/*# sourceMappingURL=styles.css.map */
