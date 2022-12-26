@@ -17,6 +17,7 @@
   font-weight: bold;
 }
 :root {
+  font-size: 62.5%;
   box-sizing: border-box;
   --text-color: #636060;
   --base-color: #499A18;
@@ -27,30 +28,35 @@
 }
 
 .header {
-  height: 134px;
+  height: 13.4rem;
   background-color: var(--bg-color, #EDF2EC);
 }
 
 .logo {
   display: inline-block;
-  padding: 2em;
-  width: 98px;
-  height: 94px;
+  padding: 3.2rem;
+  width: 6.8rem;
+  height: 3.2rem;
   background-image: url("/assets/icons/logo.svg");
   background-repeat: no-repeat;
   background-position: left center;
-  transform: translateX(-14px);
 }
 
 .container {
-  width: 1220px;
+  width: 122rem;
   margin: auto;
-}
-.container__nav {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+}
+.container__nav {
   height: 100%;
+  align-items: center;
+}
+.container__welcome {
+  padding: 5.5rem 0 6.3rem;
+}
+.container__about {
+  padding: 9.3rem 0 9.3rem;
 }
 
 .nav__list {
@@ -59,15 +65,15 @@
 }
 .nav__link {
   color: var(--nav-links-color, #010201);
-  font-family: "Inika";
-  font-size: 1em;
-  line-height: 3.125em;
-  padding: 2em 2.685em;
+  font-family: "Inika", sans-serif;
+  font-size: 1.6rem;
+  line-height: 3.125;
+  padding: 3.2rem 4.7rem;
   text-decoration: none;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-out;
 }
 .nav__link:last-child {
-  padding-right: 4px;
+  padding-right: 0;
 }
 .nav__link:hover, .nav__link_hover {
   color: var(--accent-color, #E06733);
@@ -75,4 +81,104 @@
 .nav__link:active, .nav__link_active {
   color: var(--accent-color, #E06733);
   font-weight: bold;
+}
+
+.welcome {
+  background-color: var(--bg-color, #EDF2EC);
+}
+.welcome__image {
+  background-image: url("/assets/images/welcome/leafs.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 44.9rem;
+  height: 40.7rem;
+  margin-top: 0.7rem;
+}
+.welcome__title {
+  margin: 0;
+  color: var(--title-color, #717171);
+  font-family: "Inter", sans-serif;
+  font-size: 4.5rem;
+  font-weight: bold;
+  line-height: 1.11;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.column__welcome {
+  max-width: 54.9rem;
+  margin-top: 4.3rem;
+}
+.column__about {
+  max-width: 60.5rem;
+  margin-top: 6.8rem;
+}
+
+.text {
+  margin: 0;
+  color: var(--text-color, #636060);
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  line-height: 1.75;
+}
+.text__accent {
+  color: var(--base-color, #499A18);
+}
+.text__welcome {
+  max-width: 52.5rem;
+  margin-top: 4.4rem;
+  margin-bottom: 4.72rem;
+}
+.text__about {
+  line-height: 1.5;
+  margin-top: 3.8rem;
+}
+
+.button {
+  padding: 0;
+  color: var(--accent-color, #E06733);
+  border-color: var(--accent-color, #E06733);
+  border-width: 0.1rem;
+  border-radius: 0.5rem;
+  border-style: solid;
+  background-color: transparent;
+  font-family: "Inika", sans-serif;
+  font-size: 2rem;
+  line-height: 1.3;
+  cursor: pointer;
+  width: 12.9rem;
+  height: 4rem;
+  transition: all 0.3s ease-out;
+}
+.button__accent {
+  color: black;
+  border-width: 0.2rem;
+  border-radius: 1rem;
+  text-transform: uppercase;
+  font-family: "Inter", sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  width: 15.8rem;
+  height: 4.4rem;
+}
+.button:hover, .button:active, .button_active {
+  color: white;
+  background-color: var(--accent-color, #E06733);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--base-color, #499A18);
+  font-family: "Inika", sans-serif;
+  font-weight: normal;
+  font-size: 4rem;
+  line-height: 1.3;
+}
+.subtitle__accent {
+  color: var(--accent-color, #E06733);
+}
+.subtitle__about {
+  max-width: 46.3rem;
 }/*# sourceMappingURL=styles.css.map */
