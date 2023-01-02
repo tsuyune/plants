@@ -8,6 +8,11 @@
   font-weight: bold;
 }
 @font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter/Inter-Light.ttf");
+  font-weight: 300;
+}
+@font-face {
   font-family: "Inika";
   src: url("/assets/fonts/Inika/Inika-Regular.ttf");
 }
@@ -18,7 +23,6 @@
 }
 :root {
   font-size: 62.5%;
-  box-sizing: border-box;
   --text-color: #636060;
   --base-color: #499A18;
   --accent-color: #E06733;
@@ -26,6 +30,14 @@
   --title-color: #717171;
   --nav-links-color: #010201;
   --brdr-color: #E3E1D5;
+  --prices-color: #000000;
+  --hr-color: #AEA1A1;
+  --drop-btn-active: #8BA07E;
+  --accordion-bg: #D6E7D2;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .header {
@@ -63,6 +75,9 @@
   flex-direction: column;
   gap: 8rem;
   padding: 4rem 0 12.1rem;
+}
+.container__prices {
+  padding: 3.8rem 0 11.5rem;
 }
 
 .nav__list {
@@ -120,6 +135,14 @@
 .column__about {
   max-width: 60.5rem;
   margin-top: 6.8rem;
+}
+.column__prices-left {
+  gap: 6rem;
+}
+.column__prices-right {
+  gap: 3.8rem;
+  text-align: right;
+  align-items: end;
 }
 
 .row {
@@ -201,6 +224,15 @@
 .subtitle__service {
   max-width: 30.6rem;
 }
+.subtitle__prices {
+  color: var(--prices-color, #000000);
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  max-width: 45.2rem;
+}
+.subtitle__prices_accent {
+  color: var(--base-color, #499A18);
+}
 
 .service {
   background-color: var(--bg-color, #EDF2EC);
@@ -209,8 +241,6 @@
 .card {
   width: 33rem;
   height: 45rem;
-  overflow: hidden;
-  border-radius: 2rem;
   display: flex;
   flex-direction: column;
 }
@@ -222,6 +252,7 @@
   grid-row-gap: 5.5rem;
 }
 .card__image {
+  border-radius: 2rem 2rem 0 0;
   width: 33rem;
   height: 35rem;
   -o-object-fit: cover;
@@ -244,8 +275,91 @@
 }
 .card__text {
   margin: 1.5rem 0 3.6rem;
-  color: var(--text-color, #636060);
+  color: var(--title-color, #717171);
   font-family: "Inter", sans-serif;
   font-size: 1.6rem;
   line-height: 1.25;
+}
+
+.prices__button {
+  font-weight: bold;
+}
+.prices__image {
+  background-image: url("/assets/images/prices/leafs.jpg");
+  background-repeat: no-repeat;
+  width: 15.2rem;
+  height: 17.5rem;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  border: 0.1rem solid var(--brdr-color, #E3E1D5);
+  border-radius: 2rem;
+  padding: 3.4rem 4.1rem;
+}
+.button-accordion {
+  width: 25rem;
+  height: 5rem;
+  background-color: var(--bg-color, #EDF2EC);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem 4rem;
+  border-radius: 2rem;
+}
+.button-accordion__text {
+  color: var(--prices-color, #000000);
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.content-accordion {
+  position: relative;
+  bottom: 5rem;
+  z-index: -1;
+  background-color: var(--accordion-bg, #D6E7D2);
+  padding: 6.6rem 4rem 1.2rem;
+  border-radius: 2rem;
+}
+.content-accordion__hr {
+  border: 0;
+  border-top: 0.1rem solid var(--hr-color, #AEA1A1);
+}
+.content-accordion__text {
+  max-width: 16.9rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  color: var(--title-color, #717171);
+  font-size: 1rem;
+  line-height: 1;
+}
+.content-accordion__price {
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.67;
+}
+.content-accordion__accent {
+  color: var(--accent-color, #E06733);
+  font-weight: bold;
+  font-size: 1.6rem;
+  line-height: 1.25;
+}
+.content-accordion__accent_dollar {
+  font-size: 1.2rem;
+  line-height: 1.67;
+}
+.content-accordion__button {
+  color: var(--title-color, #717171);
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 1.4rem;
+  line-height: 1.43;
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 0.3rem 2rem;
 }/*# sourceMappingURL=styles.css.map */
