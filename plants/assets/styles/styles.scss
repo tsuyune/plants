@@ -132,8 +132,6 @@
         display: flex;
     }
 
-    &__elem {}
-
     &__link {
         color: var(--nav-links-color, #010201);
 
@@ -164,8 +162,6 @@
         }
     }
 }
-
-.main {}
 
 .welcome {
     background-color: var(--bg-color, #EDF2EC);
@@ -299,8 +295,6 @@
 
     transition: all 0.3s ease-out;
 
-    &__link {}
-
     &__accent {
         color: black;
 
@@ -322,12 +316,6 @@
         color: white;
         background-color: var(--accent-color, #E06733);
     }
-}
-
-.about {
-    &__title {}
-
-    &__image {}
 }
 
 .subtitle {
@@ -694,7 +682,8 @@
         border-bottom-color: var(--title-color, #717171);
     }
 
-    &_active {
+    &_active,
+    &:hover {
         .cities__button {
             transition: all 0.3s ease-out;
 
@@ -760,19 +749,11 @@
     line-height: 2.5;
     letter-spacing: 0.05em;
 
-    &__key {}
-
-    &__place {}
-
     &__value {
         color: var(--title-color, #717171);
 
         font-style: normal;
     }
-
-    &__phone {}
-
-    &__address {}
 
     &__button {
         margin: 0 auto;
@@ -808,13 +789,13 @@
     }
 }
 
-.github,
-.github:visited {
+.footer__link,
+.footer__link:visited {
     text-decoration: none;
     color: #000000;
 }
 
-.github:hover {
+.footer__link:hover {
     transition: all 0.3s ease-out;
 
     color: var(--base-color, #499A18);
@@ -836,8 +817,6 @@
         fill: #000000;
     }
 
-    &__elem {}
-
     &__elem:hover {
         .social__icon>path {
             fill: var(--accent-color, #E06733);
@@ -845,8 +824,4 @@
             transition: all 0.3s ease-out;
         }
     }
-
-    &__link {}
-
-    &__icon {}
 }

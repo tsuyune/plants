@@ -502,22 +502,22 @@
   color: var(--title-color, #717171);
   border-bottom-color: var(--title-color, #717171);
 }
-.cities_active .cities__button {
+.cities_active .cities__button, .cities:hover .cities__button {
   transition: all 0.3s ease-out;
   padding-left: 3.5rem;
   background-color: var(--dropdown-button-color, #C1E698);
   box-shadow: none;
   border: 0.1rem solid var(--accordion-bg, #D6E7D2);
 }
-.cities_active .drop-icon {
+.cities_active .drop-icon, .cities:hover .drop-icon {
   transition: all 0.3s ease-out;
   transform: rotate(180deg);
 }
-.cities_active .drop-icon > circle {
+.cities_active .drop-icon > circle, .cities:hover .drop-icon > circle {
   transition: all 0.3s ease-out;
   fill: var(--drop-btn-active, #8BA07E);
 }
-.cities_active .cities__list {
+.cities_active .cities__list, .cities:hover .cities__list {
   transition: all 0.3s ease-out;
   display: flex;
   flex-direction: column;
@@ -573,13 +573,13 @@
   word-spacing: 1.5rem;
 }
 
-.github,
-.github:visited {
+.footer__link,
+.footer__link:visited {
   text-decoration: none;
   color: #000000;
 }
 
-.github:hover {
+.footer__link:hover {
   transition: all 0.3s ease-out;
   color: var(--base-color, #499A18);
 }
