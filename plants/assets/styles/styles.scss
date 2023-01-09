@@ -1,28 +1,28 @@
 @font-face {
     font-family: 'Inter';
-    src: url('/assets/fonts/Inter/Inter-Regular.ttf');
+    src: url('../fonts/Inter/Inter-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Inter';
-    src: url('/assets/fonts/Inter/Inter-Bold.ttf');
+    src: url('../fonts/Inter/Inter-Bold.ttf');
     font-weight: bold;
 }
 
 @font-face {
     font-family: 'Inter';
-    src: url('/assets/fonts/Inter/Inter-Light.ttf');
+    src: url('../fonts/Inter/Inter-Light.ttf');
     font-weight: 300;
 }
 
 @font-face {
     font-family: 'Inika';
-    src: url('/assets/fonts/Inika/Inika-Regular.ttf');
+    src: url('../fonts/Inika/Inika-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Inika';
-    src: url('/assets/fonts/Inika/Inika-Bold.ttf');
+    src: url('../fonts/Inika/Inika-Bold.ttf');
     font-weight: bold;
 }
 
@@ -63,7 +63,7 @@
     width: 6.8rem;
     height: 3.2rem;
 
-    background-image: url('/assets/icons/logo.svg');
+    background-image: url('../icons/logo.svg');
     background-repeat: no-repeat;
     background-position: left center;
 }
@@ -171,7 +171,7 @@
     background-color: var(--bg-color, #EDF2EC);
 
     &__image {
-        background-image: url('/assets/images/welcome/leafs.jpg');
+        background-image: url('../images/welcome/leafs.jpg');
         background-repeat: no-repeat;
         background-size: cover;
 
@@ -436,7 +436,7 @@
     }
 
     &__image {
-        background-image: url("/assets/images/prices/leafs.jpg");
+        background-image: url("../images/prices/leafs.jpg");
         background-repeat: no-repeat;
 
         width: 15.2rem;
