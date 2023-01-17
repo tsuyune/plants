@@ -51,15 +51,17 @@
     box-sizing: border-box;
 }
 
+body {
+    width: 100%;
+}
+
 .header {
-    height: 13.4rem;
     background-color: var(--bg-color, #EDF2EC);
 }
 
 .logo {
-    display: inline-block;
+    display: block;
 
-    padding: 3.2rem;
     width: 6.8rem;
     height: 3.2rem;
 
@@ -69,7 +71,7 @@
 }
 
 .container {
-    width: 122.2rem;
+    max-width: 122.2rem;
 
     margin: auto;
 
@@ -77,7 +79,9 @@
     justify-content: space-between;
 
     &__nav {
-        height: 100%;
+        height: 13.4rem;
+
+        padding: 0;
 
         align-items: center;
     }
@@ -127,6 +131,9 @@
 
 .nav {
     &__list {
+        margin: 0;
+        padding: 0;
+
         list-style: none;
 
         display: flex;
@@ -139,13 +146,13 @@
         font-size: 1.6rem;
         line-height: 3.125;
 
-        padding: 3.2rem 4.7rem;
+        padding: 2.5rem 2.35rem;
 
         text-decoration: none;
 
         transition: all 0.3s ease-out;
 
-        &:last-child {
+        &_last:last-child {
             padding-right: 0;
         }
 
@@ -161,7 +168,10 @@
             font-weight: bold;
         }
     }
+
+
 }
+
 
 .welcome {
     background-color: var(--bg-color, #EDF2EC);
@@ -212,8 +222,6 @@
         }
 
         &-right {
-            gap: 3.8rem;
-
             text-align: right;
             align-items: end;
         }
@@ -338,6 +346,8 @@
 
     &__service {
         max-width: 30.6rem;
+
+        flex-shrink: 0;
     }
 
     &__prices {
@@ -421,6 +431,9 @@
 .prices {
     &__button {
         font-weight: bold;
+
+        margin-top: 3.8rem;
+        margin-bottom: 3.8rem;
     }
 
     &__image {
@@ -600,6 +613,8 @@
 
     &__image {
         margin-top: 1rem;
+
+
     }
 }
 
@@ -824,4 +839,401 @@
             transition: all 0.3s ease-out;
         }
     }
+}
+
+@media screen and (min-width: 47.94em) and (max-width: 89.94em) {
+    .header {}
+
+    .logo {}
+
+    .welcome {
+
+        &__image {
+            margin-top: -0.1rem;
+
+            max-width: 28rem;
+            max-height: 25.4rem;
+        }
+
+        &__title {
+            font-size: 3.5rem;
+            line-height: 1.43;
+        }
+    }
+
+
+    .about {
+        &__image {
+            max-width: 25rem;
+            max-height: 25.8rem;
+        }
+    }
+
+    .container {
+        padding: 0 5rem;
+
+        min-width: 66.8rem;
+
+        &__nav {
+            height: 12.2rem;
+
+            margin-left: -0.1rem;
+            margin-right: 0.1rem
+        }
+
+        &__welcome {
+            padding-top: 3.6rem;
+            padding-bottom: 7rem;
+
+            flex-direction: row-reverse;
+        }
+
+        &__about {
+            padding-top: 4rem;
+            padding-bottom: 9.5rem;
+
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__service {
+            gap: 4rem;
+
+            padding-top: 6rem;
+            padding-bottom: 7rem;
+        }
+
+        &__prices {
+            padding-top: 4rem;
+            padding-bottom: 9.3rem;
+        }
+
+        &__contacts {
+            padding-top: 4rem;
+
+            flex-direction: column-reverse;
+
+            gap: 24.9rem;
+
+            align-items: center;
+        }
+
+        &__cities {
+            padding: 0;
+        }
+
+        &__info {}
+
+        &__footer {
+            padding-top: 3.2rem;
+
+            flex-direction: column;
+            align-items: center;
+
+            gap: 1.55rem;
+        }
+    }
+
+    .nav {
+        &__list {}
+
+        &__link {
+
+            &:last-child {}
+
+            &:hover,
+            &_hover {}
+
+            &:active,
+            &_active {}
+        }
+    }
+
+    .column {
+        &__welcome {
+            max-width: 34.6rem;
+            margin: 0;
+        }
+
+        &__about {
+            min-width: 66.3rem;
+
+            margin: 0;
+            align-items: center;
+        }
+
+        &__prices {
+
+            &-left {}
+
+            &-right {
+                margin-top: 9.9rem;
+            }
+        }
+
+        &__contacts {
+            margin: 0;
+
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+
+            gap: 10rem;
+        }
+    }
+
+    .row {
+
+        &__service {
+            flex-direction: column;
+
+            gap: 4.3rem;
+        }
+
+        &__button-list {
+            margin: 0;
+        }
+    }
+
+
+    .text {
+        font-size: 1.6rem;
+        line-height: 1.56;
+
+        &__accent {}
+
+        &__welcome {
+            margin-top: 3rem;
+            margin-bottom: 3.5rem;
+            margin-left: 0.5rem;
+        }
+
+        &__about {
+            font-size: 2rem;
+            line-height: 1.5;
+
+            margin-top: 5.1rem;
+            margin-bottom: 6.8rem;
+            margin-left: -0.2rem;
+        }
+
+    }
+
+    .button {
+        &__accent {}
+
+        &:hover,
+        &:active,
+        &_active {}
+    }
+
+    .subtitle {
+        font-size: 3.5rem;
+        line-height: 1.303;
+
+        &__accent {}
+
+        &__about {
+            text-align: center;
+        }
+
+        &__service {}
+
+        &__prices {
+            line-height: 1.21;
+
+            &-main {
+                padding-left: 1.5rem;
+            }
+
+            &_accent {}
+
+            &-caption {
+                max-width: 29.6rem;
+
+                font-size: 2.5rem;
+                line-height: 1.4;
+
+                margin-right: -0.1rem
+            }
+        }
+
+        &__contacts {
+            font-size: 4rem;
+            line-height: 1.303;
+        }
+    }
+
+    .service {}
+
+    .card {
+        max-width: 28rem;
+        max-height: 45rem;
+
+        &__list {
+            grid-column-gap: 10.6rem;
+            grid-row-gap: 3.8rem;
+
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: repeat(3, auto);
+        }
+
+        &__image {
+            width: 28rem;
+        }
+
+        &__container {}
+
+        &__title {}
+
+        &__text {
+            margin: 1rem 3.9rem 2rem;
+
+            text-align: center;
+        }
+    }
+
+    .prices {
+        &__button {
+            margin-top: 2.9rem;
+            margin-bottom: 2.9rem;
+
+            margin-right: 0.1rem
+        }
+
+        &__image {
+            margin-right: 0.4rem
+        }
+    }
+
+    .accordion {
+
+
+        .drop-icon {}
+
+        .drop-icon>circle {}
+
+        .drop-icon path {}
+
+        &__option {
+
+
+            &:hover {}
+
+            &_active {
+
+
+                .content-accordion {}
+
+                .drop-icon {}
+
+                .drop-icon>circle {}
+
+                .drop-icon path {}
+            }
+        }
+    }
+
+    .button-accordion {
+
+        &__text {}
+
+        &:hover {}
+    }
+
+    .content-accordion {
+
+
+        &__hr {}
+
+        &__text {}
+
+        &__price {}
+
+        &__accent {
+
+
+            &_dollar {}
+        }
+
+        &__button {
+
+
+            &:hover {}
+        }
+    }
+
+    .contacts {
+
+        &__image {
+            margin-top: 0rem;
+            margin-left: 2rem;
+
+            width: 20rem;
+            height: 24.85rem;
+        }
+    }
+
+    .cities {
+
+
+        &__list {}
+
+        &__button {
+
+
+            .drop-icon {}
+
+            .drop-icon>circle {}
+        }
+
+        &__elem {}
+
+        &__elem:hover {}
+
+        &_active,
+        &:hover {
+            .cities__button {}
+
+            .drop-icon {}
+
+            .drop-icon>circle {}
+
+            .cities__list {}
+        }
+
+        &_selected {
+            .cities__button {}
+        }
+    }
+
+    .info {
+
+        &__value {}
+
+        &__button {}
+    }
+
+    .footer {
+
+        &__text {
+            line-height: 1.21;
+        }
+
+        &__year {
+            word-spacing: 1.7rem;
+            margin-right: 0.2rem;
+        }
+    }
+
+    .footer__link,
+    .footer__link:visited {}
+
+    .footer__link:hover {}
+
+    .rsschool {
+        padding-left: 0;
+    }
+
+    .social {}
 }
