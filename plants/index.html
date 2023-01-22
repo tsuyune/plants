@@ -14,19 +14,30 @@
     <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
 
-<body>
+<body id="home">
     <header class="header">
         <div class="container__nav container">
             <a href="#home" class="logo"></a>
-            <nav class="nav">
-                <ul class="nav__list">
-                    <li class="nav__elem"><a href="#home" class="nav__link_active nav__link">Home</a></li>
-                    <li class="nav__elem"><a href="#about" class="nav__link">About us</a></li>
-                    <li class="nav__elem"><a href="#service" class="nav__link">Service</a></li>
-                    <li class="nav__elem"><a href="#prices" class="nav__link">Price</a></li>
-                    <li class="nav__elem"><a href="#contacts" class="nav__link_last nav__link">Contacts</a></li>
-                </ul>
-            </nav>
+            <div class="nav__burger">
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__elem"><a href="#home" class="nav__link_active nav__link">Home</a></li>
+                        <li class="nav__elem"><a href="#about" class="nav__link">About us</a></li>
+                        <li class="nav__elem"><a href="#service" class="nav__link">Service</a></li>
+                        <li class="nav__elem"><a href="#prices" class="nav__link">Price</a></li>
+                        <li class="nav__elem"><a href="#contacts" class="nav__link_last nav__link">Contacts</a></li>
+                    </ul>
+                </nav>
+                <div class="container__burger">
+                    <svg class="burger__icon" width="40" height="36" viewbox="0 0 40 36" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <line y1="5" x2="40" y2="5" stroke="#717171" stroke-width="2" />
+                        <line y1="13" x2="40" y2="13" stroke="#717171" stroke-width="2" />
+                        <line y1="21" x2="40" y2="21" stroke="#717171" stroke-width="2" />
+                        <line y1="29" x2="40" y2="29" stroke="#717171" stroke-width="2" />
+                    </svg>
+                </div>
+            </div>
         </div>
     </header>
     <main class="main">

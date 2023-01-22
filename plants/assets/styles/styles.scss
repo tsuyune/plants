@@ -120,12 +120,16 @@ body {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
 
-        grid-column-gap: 1.6rem;
+        column-gap: 1.6rem;
     }
 
     &__footer {
         padding-top: 4rem;
         padding-bottom: 4rem;
+    }
+
+    &__burger {
+        display: none;
     }
 }
 
@@ -168,10 +172,7 @@ body {
             font-weight: bold;
         }
     }
-
-
 }
-
 
 .welcome {
     background-color: var(--bg-color, #EDF2EC);
@@ -386,7 +387,7 @@ body {
 
         justify-content: space-between;
 
-        grid-row-gap: 5.5rem;
+        row-gap: 5.5rem;
     }
 
     &__image {
@@ -613,8 +614,6 @@ body {
 
     &__image {
         margin-top: 1rem;
-
-
     }
 }
 
@@ -841,13 +840,16 @@ body {
     }
 }
 
-@media screen and (min-width: 47.94em) and (max-width: 89.94em) {
-    .header {}
+/* adaptive layout for screens less than 1440px*/
+@media screen and (max-width: 89.94em) {
+    .container {
+        max-width: 100rem;
+    }
+}
 
-    .logo {}
-
+/* adaptive layout for tablets less 1088px*/
+@media screen and (max-width: 68em) {
     .welcome {
-
         &__image {
             margin-top: -0.1rem;
 
@@ -922,8 +924,6 @@ body {
             padding: 0;
         }
 
-        &__info {}
-
         &__footer {
             padding-top: 3.2rem;
 
@@ -931,21 +931,6 @@ body {
             align-items: center;
 
             gap: 1.55rem;
-        }
-    }
-
-    .nav {
-        &__list {}
-
-        &__link {
-
-            &:last-child {}
-
-            &:hover,
-            &_hover {}
-
-            &:active,
-            &_active {}
         }
     }
 
@@ -963,9 +948,6 @@ body {
         }
 
         &__prices {
-
-            &-left {}
-
             &-right {
                 margin-top: 9.9rem;
             }
@@ -1000,8 +982,6 @@ body {
         font-size: 1.6rem;
         line-height: 1.56;
 
-        &__accent {}
-
         &__welcome {
             margin-top: 3rem;
             margin-bottom: 3.5rem;
@@ -1019,25 +999,13 @@ body {
 
     }
 
-    .button {
-        &__accent {}
-
-        &:hover,
-        &:active,
-        &_active {}
-    }
-
     .subtitle {
         font-size: 3.5rem;
         line-height: 1.303;
 
-        &__accent {}
-
         &__about {
             text-align: center;
         }
-
-        &__service {}
 
         &__prices {
             line-height: 1.21;
@@ -1045,8 +1013,6 @@ body {
             &-main {
                 padding-left: 1.5rem;
             }
-
-            &_accent {}
 
             &-caption {
                 max-width: 29.6rem;
@@ -1064,15 +1030,13 @@ body {
         }
     }
 
-    .service {}
-
     .card {
         max-width: 28rem;
         max-height: 45rem;
 
         &__list {
-            grid-column-gap: 10.6rem;
-            grid-row-gap: 3.8rem;
+            column-gap: 10.6rem;
+            row-gap: 3.8rem;
 
             grid-template-columns: repeat(2, auto);
             grid-template-rows: repeat(3, auto);
@@ -1081,10 +1045,6 @@ body {
         &__image {
             width: 28rem;
         }
-
-        &__container {}
-
-        &__title {}
 
         &__text {
             margin: 1rem 3.9rem 2rem;
@@ -1106,65 +1066,12 @@ body {
         }
     }
 
-    .accordion {
-
-
-        .drop-icon {}
-
-        .drop-icon>circle {}
-
-        .drop-icon path {}
-
-        &__option {
-
-
-            &:hover {}
-
-            &_active {
-
-
-                .content-accordion {}
-
-                .drop-icon {}
-
-                .drop-icon>circle {}
-
-                .drop-icon path {}
-            }
-        }
-    }
-
-    .button-accordion {
-
-        &__text {}
-
-        &:hover {}
-    }
-
     .content-accordion {
-
-
-        &__hr {}
-
-        &__text {}
-
-        &__price {}
-
-        &__accent {
-
-
-            &_dollar {}
-        }
-
-        &__button {
-
-
-            &:hover {}
-        }
+        padding-left: 5%;
+        padding-right: 5%;
     }
 
     .contacts {
-
         &__image {
             margin-top: 0rem;
             margin-left: 2rem;
@@ -1172,46 +1079,6 @@ body {
             width: 20rem;
             height: 24.85rem;
         }
-    }
-
-    .cities {
-
-
-        &__list {}
-
-        &__button {
-
-
-            .drop-icon {}
-
-            .drop-icon>circle {}
-        }
-
-        &__elem {}
-
-        &__elem:hover {}
-
-        &_active,
-        &:hover {
-            .cities__button {}
-
-            .drop-icon {}
-
-            .drop-icon>circle {}
-
-            .cities__list {}
-        }
-
-        &_selected {
-            .cities__button {}
-        }
-    }
-
-    .info {
-
-        &__value {}
-
-        &__button {}
     }
 
     .footer {
@@ -1226,14 +1093,450 @@ body {
         }
     }
 
-    .footer__link,
-    .footer__link:visited {}
+    .rsschool {
+        padding-left: 0;
+    }
+}
 
-    .footer__link:hover {}
+/* adaptive layout for mobile phones less than 720px*/
+@media screen and (max-width: 45em) {
+
+    .welcome {
+        &__image {
+            display: none;
+        }
+
+        &__title {
+            font-size: 2.5rem;
+            line-height: 1.4;
+        }
+    }
+
+
+    .about {
+        &__image {
+            max-width: 15rem;
+            max-height: 15.3rem;
+        }
+    }
+
+    .container {
+        padding: 0 2.5rem;
+
+        min-width: 33rem;
+
+        &__nav {
+            height: 10.2rem;
+
+            margin-left: -0.1rem;
+            margin-right: 0.1rem
+        }
+
+        &__welcome {
+            padding-top: 2rem;
+            padding-bottom: 2.4rem;
+
+            justify-content: start;
+        }
+
+        &__about {
+            padding-top: 3rem;
+            padding-bottom: 2.75rem;
+
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__service {
+            gap: 4rem;
+
+            padding-top: 3rem;
+            padding-bottom: 2.6rem;
+        }
+
+        &__prices {
+            padding-top: 2.55rem;
+            padding-bottom: 4.05rem;
+
+            flex-direction: column;
+        }
+
+        &__contacts {
+            padding-top: 2.5rem;
+
+            flex-direction: column-reverse;
+
+            gap: 13.19rem;
+
+            align-items: center;
+        }
+
+        &__cities {
+            padding: 0;
+        }
+
+        &__footer {
+            padding-top: 2.15rem;
+
+            flex-direction: column;
+            align-items: center;
+
+            gap: 1.55rem;
+        }
+
+        &__burger {
+            display: block;
+            position: relative;
+            z-index: 2;
+
+            padding: 1rem;
+            margin-right: -1rem;
+            margin-bottom: 0.4rem;
+
+            border-radius: 50%;
+
+            &:hover {
+                cursor: pointer;
+
+                background-color: var(--accordion-bg, #D6E7D2);
+
+                transition: all 0.3s ease-in-out;
+
+                .burger__icon line {
+                    stroke: var(--base-color, #499A18);
+
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+
+    .nav {
+        background-color: var(--bg-color, #EDF2EC);
+
+        width: 100%;
+        height: max-content;
+
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: -50%;
+
+        padding-top: 9.6rem;
+        padding-bottom: 1rem;
+
+        transition: all 0.3s ease-in-out;
+        transform: scaleX(0);
+
+        &__list {
+            flex-direction: column;
+
+            gap: 0rem;
+        }
+
+        &__elem {
+            min-width: 20rem;
+        }
+
+        &__link {
+            display: block;
+            width: 100%;
+            line-height: 1;
+
+            &:last-child {
+                padding-right: 2.5rem;
+            }
+
+            &:hover,
+            &_hover {
+                background-color: var(--accordion-bg, #D6E7D2);
+            }
+
+
+            &_active {
+                font-weight: normal;
+
+                color: var(--nav-links-color, #010201);
+            }
+
+        }
+
+        &__burger {
+            &_active {
+
+                .burger__icon>line:first-child,
+                line:last-child {
+                    transition: all 0.3s ease-in-out;
+                    display: none;
+                }
+
+                .burger__icon>line:nth-child(2) {
+                    transition: all 0.3s ease-in-out;
+                    transform: translate(1.5rem, -0.6rem) rotate(45deg);
+                }
+
+                .burger__icon>line:nth-child(3) {
+                    transition: all 0.3s ease-in-out;
+                    transform: translate(-1rem, 1.65rem) rotate(-45deg);
+                }
+
+                .nav {
+                    right: 0;
+
+                    transition: all 0.5s ease-in-out;
+                    transform: scaleX(100%);
+                }
+            }
+        }
+    }
+
+    .column {
+        &__welcome {
+            max-width: max-content;
+
+            margin: 0;
+        }
+
+        &__about {
+            min-width: 0;
+            margin: 0;
+            align-items: center;
+        }
+
+        &__prices {
+            &-left {
+                gap: 3.7rem;
+                text-align: center;
+
+                padding-bottom: 1.9rem;
+            }
+
+            &-right {
+                margin-top: 0;
+
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        &__contacts {
+            margin: 0;
+
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+
+            width: auto;
+
+            gap: 8.1rem;
+        }
+
+        &__nav {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .row {
+        &__service {
+            flex-direction: column;
+
+            gap: 3.9rem;
+        }
+
+        &__button-list {
+            margin: 0;
+            flex-wrap: wrap;
+
+            gap: 0.95rem;
+        }
+    }
+
+    .text {
+        margin-left: 0;
+
+        font-size: 1.6rem;
+        line-height: 1.56;
+
+        &__welcome {
+            margin-top: 2rem;
+            margin-bottom: 2.62rem;
+        }
+
+        &__about {
+            font-size: 1.5rem;
+            line-height: 1.67;
+
+            margin-top: 1.5rem;
+            margin-bottom: 0rem;
+        }
+    }
+
+    .button {
+        width: 12.1rem;
+        height: 3.5rem;
+
+        font-size: 1.5rem;
+        line-height: 1.3;
+
+        &__accent {
+            width: 10rem;
+            height: 3.41rem;
+
+            font-size: 1rem;
+            line-height: 2;
+        }
+    }
+
+    .subtitle {
+        font-size: 2.5rem;
+        line-height: 1.303;
+
+        &__about {
+            max-width: 28.8rem;
+            text-align: center;
+        }
+
+        &__service {
+            max-width: 18.7rem;
+        }
+
+        &__prices {
+            padding-left: 0;
+
+            line-height: 1.21;
+
+            &-main {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            &-caption {
+                max-width: 23rem;
+
+                font-size: 2rem;
+                line-height: 1.75;
+            }
+        }
+    }
+
+    .card {
+        max-width: 28rem;
+        max-height: 45rem;
+
+        &__list {
+            justify-content: center;
+
+            row-gap: 3.4rem;
+
+            grid-template-columns: repeat(1, auto);
+        }
+
+        &__image {
+            width: 28rem;
+        }
+
+        &__text {
+            margin: 1rem 3.9rem 2rem;
+
+            text-align: center;
+        }
+    }
+
+    .prices {
+        &__button {
+            margin-top: 2rem;
+            margin-bottom: 0rem;
+
+            margin-right: 0.1rem
+        }
+
+        &__image {
+            display: none;
+        }
+    }
+
+    .accordion {
+        padding: 2.9rem 2.2rem 2.9rem;
+        margin: 0 5.3rem;
+
+        gap: 1.35rem;
+    }
+
+    .button-accordion {
+        width: 100%;
+        height: 4.972rem;
+        padding-left: 17%;
+        padding-right: 22.4%;
+
+        &__text {
+            font-size: 1.5rem;
+            line-height: 1.33;
+        }
+    }
+
+    .contacts {
+        &__image {
+            margin-top: 0rem;
+            margin-left: 0;
+            margin-right: 0.3rem;
+
+            width: 10rem;
+            height: 12.425rem;
+        }
+    }
+
+    .cities {
+        width: 30rem;
+
+        &__button {
+            padding-right: 2.2rem;
+        }
+    }
+
+    .footer {
+
+        &__text {
+            line-height: 1.21;
+        }
+
+        &__year {
+            word-spacing: 1.7rem;
+            margin-right: 0.2rem;
+        }
+    }
 
     .rsschool {
         padding-left: 0;
     }
 
-    .social {}
+    .social {
+        margin-top: -0.2rem;
+        margin-bottom: 1.6rem;
+    }
+}
+
+/* adaptive layout for mobile phones with width less than 330px*/
+@media screen and (max-width: 20.625em) {
+    .container {
+        min-width: 1vw;
+
+        padding-left: 3%;
+        padding-right: 3%;
+
+        &__cities {
+            width: 20rem;
+        }
+    }
+
+    .cities {
+        width: 100%;
+    }
+
+    .button-accordion {
+        width: 100%;
+
+        padding-left: 5%;
+        padding-right: 5%;
+    }
 }
