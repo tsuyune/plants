@@ -44,14 +44,16 @@
   box-sizing: border-box;
 }
 
+body {
+  width: 100%;
+}
+
 .header {
-  height: 13.4rem;
   background-color: var(--bg-color, #EDF2EC);
 }
 
 .logo {
-  display: inline-block;
-  padding: 3.2rem;
+  display: block;
   width: 6.8rem;
   height: 3.2rem;
   background-image: url("../icons/logo.svg");
@@ -60,13 +62,14 @@
 }
 
 .container {
-  width: 122.2rem;
+  max-width: 122.2rem;
   margin: auto;
   display: flex;
   justify-content: space-between;
 }
 .container__nav {
-  height: 100%;
+  height: 13.4rem;
+  padding: 0;
   align-items: center;
 }
 .container__welcome {
@@ -94,14 +97,20 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 1.6rem;
+  -moz-column-gap: 1.6rem;
+       column-gap: 1.6rem;
 }
 .container__footer {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
+.container__burger {
+  display: none;
+}
 
 .nav__list {
+  margin: 0;
+  padding: 0;
   list-style: none;
   display: flex;
 }
@@ -110,11 +119,11 @@
   font-family: "Inika", sans-serif;
   font-size: 1.6rem;
   line-height: 3.125;
-  padding: 3.2rem 4.7rem;
+  padding: 2.5rem 2.35rem;
   text-decoration: none;
   transition: all 0.3s ease-out;
 }
-.nav__link:last-child {
+.nav__link_last:last-child {
   padding-right: 0;
 }
 .nav__link:hover, .nav__link_hover {
@@ -161,7 +170,6 @@
   gap: 6rem;
 }
 .column__prices-right {
-  gap: 3.8rem;
   text-align: right;
   align-items: end;
 }
@@ -252,6 +260,7 @@
 }
 .subtitle__service {
   max-width: 30.6rem;
+  flex-shrink: 0;
 }
 .subtitle__prices {
   color: var(--prices-color, #000000);
@@ -281,7 +290,7 @@
   grid-template-columns: repeat(3, auto);
   grid-template-rows: repeat(2, auto);
   justify-content: space-between;
-  grid-row-gap: 5.5rem;
+  row-gap: 5.5rem;
 }
 .card__image {
   border-radius: 2rem 2rem 0 0;
@@ -315,6 +324,8 @@
 
 .prices__button {
   font-weight: bold;
+  margin-top: 3.8rem;
+  margin-bottom: 3.8rem;
 }
 .prices__image {
   background-image: url("../images/prices/leafs.jpg");
@@ -600,4 +611,492 @@
 .social__elem:hover .social__icon > path {
   fill: var(--accent-color, #E06733);
   transition: all 0.3s ease-out;
+}
+
+/* adaptive layout for screens less than 1440px*/
+@media screen and (max-width: 89.94em) {
+  .container {
+    max-width: 100rem;
+  }
+}
+/* adaptive layout for tablets less 1088px*/
+@media screen and (max-width: 68em) {
+  .welcome__image {
+    margin-top: -0.1rem;
+    max-width: 28rem;
+    max-height: 25.4rem;
+  }
+  .welcome__title {
+    font-size: 3.5rem;
+    line-height: 1.43;
+  }
+  .about__image {
+    max-width: 25rem;
+    max-height: 25.8rem;
+  }
+  .container {
+    padding: 0 5rem;
+    min-width: 66.8rem;
+  }
+  .container__nav {
+    height: 12.2rem;
+    margin-left: -0.1rem;
+    margin-right: 0.1rem;
+  }
+  .container__welcome {
+    padding-top: 3.6rem;
+    padding-bottom: 7rem;
+    flex-direction: row-reverse;
+  }
+  .container__about {
+    padding-top: 4rem;
+    padding-bottom: 9.5rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container__service {
+    gap: 4rem;
+    padding-top: 6rem;
+    padding-bottom: 7rem;
+  }
+  .container__prices {
+    padding-top: 4rem;
+    padding-bottom: 9.3rem;
+  }
+  .container__contacts {
+    padding-top: 4rem;
+    flex-direction: column-reverse;
+    gap: 24.9rem;
+    align-items: center;
+  }
+  .container__cities {
+    padding: 0;
+  }
+  .container__footer {
+    padding-top: 3.2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.55rem;
+  }
+  .column__welcome {
+    max-width: 34.6rem;
+    margin: 0;
+  }
+  .column__about {
+    min-width: 66.3rem;
+    margin: 0;
+    align-items: center;
+  }
+  .column__prices-right {
+    margin-top: 9.9rem;
+  }
+  .column__contacts {
+    margin: 0;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 10rem;
+  }
+  .row__service {
+    flex-direction: column;
+    gap: 4.3rem;
+  }
+  .row__button-list {
+    margin: 0;
+  }
+  .text {
+    font-size: 1.6rem;
+    line-height: 1.56;
+  }
+  .text__welcome {
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+    margin-left: 0.5rem;
+  }
+  .text__about {
+    font-size: 2rem;
+    line-height: 1.5;
+    margin-top: 5.1rem;
+    margin-bottom: 6.8rem;
+    margin-left: -0.2rem;
+  }
+  .subtitle {
+    font-size: 3.5rem;
+    line-height: 1.303;
+  }
+  .subtitle__about {
+    text-align: center;
+  }
+  .subtitle__prices {
+    line-height: 1.21;
+  }
+  .subtitle__prices-main {
+    padding-left: 1.5rem;
+  }
+  .subtitle__prices-caption {
+    max-width: 29.6rem;
+    font-size: 2.5rem;
+    line-height: 1.4;
+    margin-right: -0.1rem;
+  }
+  .subtitle__contacts {
+    font-size: 4rem;
+    line-height: 1.303;
+  }
+  .card {
+    max-width: 28rem;
+    max-height: 45rem;
+  }
+  .card__list {
+    -moz-column-gap: 10.6rem;
+         column-gap: 10.6rem;
+    row-gap: 3.8rem;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+  }
+  .card__image {
+    width: 28rem;
+  }
+  .card__text {
+    margin: 1rem 3.9rem 2rem;
+    text-align: center;
+  }
+  .prices__button {
+    margin-top: 2.9rem;
+    margin-bottom: 2.9rem;
+    margin-right: 0.1rem;
+  }
+  .prices__image {
+    margin-right: 0.4rem;
+  }
+  .content-accordion {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  .contacts__image {
+    margin-top: 0rem;
+    margin-left: 2rem;
+    width: 20rem;
+    height: 24.85rem;
+  }
+  .footer__text {
+    line-height: 1.21;
+  }
+  .footer__year {
+    word-spacing: 1.7rem;
+    margin-right: 0.2rem;
+  }
+  .rsschool {
+    padding-left: 0;
+  }
+}
+/* adaptive layout for mobile phones less than 720px*/
+@media screen and (max-width: 45em) {
+  .welcome__image {
+    display: none;
+  }
+  .welcome__title {
+    font-size: 2.5rem;
+    line-height: 1.4;
+  }
+  .about__image {
+    max-width: 15rem;
+    max-height: 15.3rem;
+  }
+  .container {
+    padding: 0 2.5rem;
+    min-width: 33rem;
+  }
+  .container__nav {
+    height: 10.2rem;
+    margin-left: -0.1rem;
+    margin-right: 0.1rem;
+  }
+  .container__welcome {
+    padding-top: 2rem;
+    padding-bottom: 2.4rem;
+    justify-content: start;
+  }
+  .container__about {
+    padding-top: 3rem;
+    padding-bottom: 2.75rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container__service {
+    gap: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 2.6rem;
+  }
+  .container__prices {
+    padding-top: 2.55rem;
+    padding-bottom: 4.05rem;
+    flex-direction: column;
+  }
+  .container__contacts {
+    padding-top: 2.5rem;
+    flex-direction: column-reverse;
+    gap: 13.19rem;
+    align-items: center;
+  }
+  .container__cities {
+    padding: 0;
+  }
+  .container__footer {
+    padding-top: 2.15rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.55rem;
+  }
+  .container__burger {
+    display: block;
+    position: relative;
+    z-index: 2;
+    padding: 1rem;
+    margin-right: -1rem;
+    margin-bottom: 0.4rem;
+    border-radius: 50%;
+  }
+  .container__burger:hover {
+    cursor: pointer;
+    background-color: var(--accordion-bg, #D6E7D2);
+    transition: all 0.3s ease-in-out;
+  }
+  .container__burger:hover .burger__icon line {
+    stroke: var(--base-color, #499A18);
+    transition: all 0.3s ease-in-out;
+  }
+  .nav {
+    background-color: var(--bg-color, #EDF2EC);
+    width: 100%;
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: -50%;
+    padding-top: 9.6rem;
+    padding-bottom: 1rem;
+    transition: all 0.3s ease-in-out;
+    transform: scaleX(0);
+  }
+  .nav__list {
+    flex-direction: column;
+    gap: 0rem;
+  }
+  .nav__elem {
+    min-width: 20rem;
+  }
+  .nav__link {
+    display: block;
+    width: 100%;
+    line-height: 1;
+  }
+  .nav__link:last-child {
+    padding-right: 2.5rem;
+  }
+  .nav__link:hover, .nav__link_hover {
+    background-color: var(--accordion-bg, #D6E7D2);
+  }
+  .nav__link_active {
+    font-weight: normal;
+    color: var(--nav-links-color, #010201);
+  }
+  .nav__burger_active .burger__icon > line:first-child,
+.nav__burger_active line:last-child {
+    transition: all 0.3s ease-in-out;
+    display: none;
+  }
+  .nav__burger_active .burger__icon > line:nth-child(2) {
+    transition: all 0.3s ease-in-out;
+    transform: translate(1.5rem, -0.6rem) rotate(45deg);
+  }
+  .nav__burger_active .burger__icon > line:nth-child(3) {
+    transition: all 0.3s ease-in-out;
+    transform: translate(-1rem, 1.65rem) rotate(-45deg);
+  }
+  .nav__burger_active .nav {
+    right: 0;
+    transition: all 0.5s ease-in-out;
+    transform: scaleX(100%);
+  }
+  .column__welcome {
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
+    margin: 0;
+  }
+  .column__about {
+    min-width: 0;
+    margin: 0;
+    align-items: center;
+  }
+  .column__prices-left {
+    gap: 3.7rem;
+    text-align: center;
+    padding-bottom: 1.9rem;
+  }
+  .column__prices-right {
+    margin-top: 0;
+    align-items: center;
+    text-align: center;
+  }
+  .column__contacts {
+    margin: 0;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: auto;
+    gap: 8.1rem;
+  }
+  .column__nav {
+    width: 100%;
+    height: 100%;
+  }
+  .row__service {
+    flex-direction: column;
+    gap: 3.9rem;
+  }
+  .row__button-list {
+    margin: 0;
+    flex-wrap: wrap;
+    gap: 0.95rem;
+  }
+  .text {
+    margin-left: 0;
+    font-size: 1.6rem;
+    line-height: 1.56;
+  }
+  .text__welcome {
+    margin-top: 2rem;
+    margin-bottom: 2.62rem;
+  }
+  .text__about {
+    font-size: 1.5rem;
+    line-height: 1.67;
+    margin-top: 1.5rem;
+    margin-bottom: 0rem;
+  }
+  .button {
+    width: 12.1rem;
+    height: 3.5rem;
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  .button__accent {
+    width: 10rem;
+    height: 3.41rem;
+    font-size: 1rem;
+    line-height: 2;
+  }
+  .subtitle {
+    font-size: 2.5rem;
+    line-height: 1.303;
+  }
+  .subtitle__about {
+    max-width: 28.8rem;
+    text-align: center;
+  }
+  .subtitle__service {
+    max-width: 18.7rem;
+  }
+  .subtitle__prices {
+    padding-left: 0;
+    line-height: 1.21;
+  }
+  .subtitle__prices-main {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .subtitle__prices-caption {
+    max-width: 23rem;
+    font-size: 2rem;
+    line-height: 1.75;
+  }
+  .card {
+    max-width: 28rem;
+    max-height: 45rem;
+  }
+  .card__list {
+    justify-content: center;
+    row-gap: 3.4rem;
+    grid-template-columns: repeat(1, auto);
+  }
+  .card__image {
+    width: 28rem;
+  }
+  .card__text {
+    margin: 1rem 3.9rem 2rem;
+    text-align: center;
+  }
+  .prices__button {
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+    margin-right: 0.1rem;
+  }
+  .prices__image {
+    display: none;
+  }
+  .accordion {
+    padding: 2.9rem 2.2rem 2.9rem;
+    margin: 0 5.3rem;
+    gap: 1.35rem;
+  }
+  .button-accordion {
+    width: 100%;
+    height: 4.972rem;
+    padding-left: 17%;
+    padding-right: 22.4%;
+  }
+  .button-accordion__text {
+    font-size: 1.5rem;
+    line-height: 1.33;
+  }
+  .contacts__image {
+    margin-top: 0rem;
+    margin-left: 0;
+    margin-right: 0.3rem;
+    width: 10rem;
+    height: 12.425rem;
+  }
+  .cities {
+    width: 30rem;
+  }
+  .cities__button {
+    padding-right: 2.2rem;
+  }
+  .footer__text {
+    line-height: 1.21;
+  }
+  .footer__year {
+    word-spacing: 1.7rem;
+    margin-right: 0.2rem;
+  }
+  .rsschool {
+    padding-left: 0;
+  }
+  .social {
+    margin-top: -0.2rem;
+    margin-bottom: 1.6rem;
+  }
+}
+/* adaptive layout for mobile phones with width less than 330px*/
+@media screen and (max-width: 20.625em) {
+  .container {
+    min-width: 1vw;
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+  .container__cities {
+    width: 20rem;
+  }
+  .cities {
+    width: 100%;
+  }
+  .button-accordion {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }/*# sourceMappingURL=styles.css.map */
