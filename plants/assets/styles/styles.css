@@ -95,8 +95,10 @@ body {
 .container__info {
   padding-bottom: 1.8rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, -webkit-max-content);
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: repeat(3, -webkit-max-content);
+  grid-template-rows: repeat(3, max-content);
   -moz-column-gap: 1.6rem;
        column-gap: 1.6rem;
 }
@@ -321,6 +323,9 @@ body {
   font-size: 1.6rem;
   line-height: 1.25;
 }
+.card_inactive {
+  filter: blur(0.4rem);
+}
 
 .prices__button {
   font-weight: bold;
@@ -476,12 +481,16 @@ body {
 }
 .cities__list {
   display: none;
+  position: relative;
+  z-index: 1;
   background-color: var(--accordion-bg, #D6E7D2);
   margin: 0;
   padding: 3.4rem 3.5rem 3.1rem;
   list-style: none;
-  display: none;
   transition: all 0.3s ease-out;
+}
+.cities__list_closed {
+  display: none;
 }
 .cities__button {
   display: flex;
@@ -533,6 +542,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.9rem;
+  position: relative;
+  z-index: 1;
+}
+.cities_active .cities__list_closed, .cities:hover .cities__list_closed {
+  display: none;
 }
 .cities_selected .cities__button {
   padding-left: 3.5rem;
@@ -546,6 +560,7 @@ body {
 
 .info {
   display: none;
+  width: 100%;
   margin-top: 4.7rem;
   margin-left: 0.2rem;
   padding: 1.7rem 3.3rem 3.1rem;
@@ -573,6 +588,9 @@ body {
   font-family: Inika;
   font-size: 1rem;
   line-height: 1.3;
+}
+.info_opened {
+  display: block;
 }
 
 .footer__text {
@@ -695,7 +713,7 @@ body {
     flex-direction: column;
     justify-content: start;
     align-items: center;
-    gap: 10rem;
+    gap: 6rem;
   }
   .row__service {
     flex-direction: column;
@@ -703,6 +721,9 @@ body {
   }
   .row__button-list {
     margin: 0;
+  }
+  .info {
+    margin-top: 6rem;
   }
   .text {
     font-size: 1.6rem;
